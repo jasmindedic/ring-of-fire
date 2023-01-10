@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { StartScreenComponent } from './start-screen/start-screen.component';
 import { GameComponent } from './game/game.component';
 import { PlayerComponent } from './player/player.component';
+import { MatButtonModule, MatIconModule, } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,10 @@ import { PlayerComponent } from './player/player.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatButtonModule,
+    MatIconModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
