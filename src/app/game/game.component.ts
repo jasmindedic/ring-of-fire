@@ -12,6 +12,7 @@ export class GameComponent {
   pickCardAnimation = false;
   currentCard: string | undefined = '';
   game!: Game;
+  showInfo: boolean = true;
 
   constructor(public dialog: MatDialog,) { }
 
@@ -25,8 +26,10 @@ export class GameComponent {
   }
 
   takeCard(){
+    
       if(!this.pickCardAnimation)
     {
+      this.showInfo = false;
       this.currentCard = this.game.stack.pop();
       this.pickCardAnimation = true;
       console.log('new card is ' + this.currentCard);
@@ -37,8 +40,11 @@ export class GameComponent {
       setTimeout(() => {
         this.game.playedCards.push(this.currentCard as string);
         this.pickCardAnimation = false;
+        this.game.currentPlayer = (this.game.currentPlayer + 1) % this.game.players.length;
+
       }, 1500);
     }
+
   }
 
 
@@ -46,7 +52,10 @@ export class GameComponent {
     const dialogRef = this.dialog.open(DialogAddPlayerComponent);
 
     dialogRef.afterClosed().subscribe(name => {
-      this.game.players.push(name);
+      if( name && name.length > 0){
+        this.game.players.push(name);
+
+      }
     });
   }
 }
