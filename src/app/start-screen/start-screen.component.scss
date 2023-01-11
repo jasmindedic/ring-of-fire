@@ -1,4 +1,4 @@
-.start-screen {
+.start-screen{
     background-color: #404040;
     width: 100vw;
     height: 100vh;
@@ -6,27 +6,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    img {
+    .start-box{
         height: 100vh;
     }
-}
+    .start-label-box{
+        position: absolute;
+        bottom: 6rem;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
 
-.start-label-box {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 50px;
-    display: flex;
-    justify-content: center;
-
-    img {
-        width: 40vw;
-        height: auto;
-
-        &:hover {
-            filter: brightness(1.35);
+        img{
+            height: auto;
+            width: 40vw;
             cursor: pointer;
+            &:hover{
+
+                filter: brightness(1.25);
+            }
         }
     }
 }
