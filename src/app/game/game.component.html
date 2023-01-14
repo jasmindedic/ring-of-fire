@@ -24,13 +24,13 @@ class="player-position">
         <img 
         *ngFor="let c of [1,2,3,4,5]; let i = index;" 
         [ngStyle]="{'right.px':i *15}" 
-        src="assets/cards/card-back-black.png" alt="">
+        src="assets/cards/card_cover.png" alt="">
 
         <!-- Stack for played cards -->
         <img (click)="takeCard()" 
         class="top-card" 
         style="right:75px"  
-        src="assets/cards/card-back-black.png" alt="">
+        src="assets/cards/card_cover.png" alt="">
 
         <!-- Current card (Animation) -->
         <img (click)="takeCard()" 
